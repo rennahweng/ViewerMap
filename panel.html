@@ -55,11 +55,12 @@ function initMap() {
   // The map, centered at Alexandria, Egypt
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 0.5, center: rome});
+
   // The marker, positioned at Alexandria, Egypt
-  var marker = new google.maps.Marker({position: alexandria, map: map});
-  var marker = new google.maps.Marker({position: lourmarin, map: map});
-  var marker = new google.maps.Marker({position: salinas, map: map});
-  var marker = new google.maps.Marker({position: tokyo, map: map});
+  var marker = new google.maps.Marker({position: alexandria, icon: 'egypt.png', map: map});
+  var marker = new google.maps.Marker({position: lourmarin, icon: 'france.png', map: map});
+  var marker = new google.maps.Marker({position: salinas, icon: 'us.png', map: map});
+  var marker = new google.maps.Marker({position: tokyo, icon: 'japan.png', map: map});
 }
     </script>
     <script async defer
