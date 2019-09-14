@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Viewer Page</title>
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+          height: 230px;  /* The height is 400 pixels */
+          width: 100%;  /* The width is the width of the web page */
+         }
+      </style>
+</head>
+
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+    <div id="app" class="full-height"></div>
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="viewer.js" type="text/javascript"></script>
+    <!-- <h2>Hello, World!</h2>
+    <p>Would you care to cycle a color?</p>
+    <div>
+        <input type="button" id="cycle" disabled="disabled" value="Yes, I would" />
+    </div>
+    <div style="float: left; position: relative; left: 50%">
+        <div id="color"
+            style="border-radius: 50px; transition: background-color 0.5s ease; margin-top: 30px; width: 100px; height: 100px; background-color: #6441A4; float: left; position: relative; left: -50%">
+        </div>
+    </div>
+    <div id="list">
+    </div> -->
+    <h3>User Locations</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Alexandria, Egypt
+  var alexandria = {lat: 31.2001, lng: 29.9187};
+
+  // The location of Lourmarin, France
+  var lourmarin = {lat: 43.7635, lng: 5.3626};
+
+  // The location of Salinas, California
+  var salinas = {lat: 36.6777, lng: -121.6555};
+
+  // The location of Tokyo, Japan
+  var tokyo = {lat: 35.6762, lng: 139.6503};
+ 
+  // The location of Rome, Italy -- for center
+  var rome = {lat: 41.9028, lng: 12.4964};
+ 
+  // The map, centered at Alexandria, Egypt
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 0.5, center: rome});
+  // The marker, positioned at Alexandria, Egypt
+  var marker = new google.maps.Marker({position: alexandria, map: map});
+  var marker = new google.maps.Marker({position: lourmarin, map: map});
+  var marker = new google.maps.Marker({position: salinas, map: map});
+  var marker = new google.maps.Marker({position: tokyo, map: map});
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeDggSoHJrHFG2wso_BtFAXCVhYiXXhzc&callback=initMap">
+    </script>
+</body>
+
+</html>
+
